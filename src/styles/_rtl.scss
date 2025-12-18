@@ -1,0 +1,215 @@
+// ============================================
+// RTL (Right-to-Left) SUPPORT
+// ============================================
+
+[dir='rtl'] {
+    // Text alignment
+    text-align: right;
+
+    // Flip float directions
+    .float-start {
+        float: right !important;
+    }
+
+    .float-end {
+        float: left !important;
+    }
+
+    // Flip text alignment utilities
+    .text-start {
+        text-align: right !important;
+    }
+
+    .text-end {
+        text-align: left !important;
+    }
+
+    // Margin and padding flips
+    .ms-auto {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    .me-auto {
+        margin-right: 0 !important;
+        margin-left: auto !important;
+    }
+
+    // Border radius flips
+    .rounded-start {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-top-right-radius: var(--bs-border-radius) !important;
+        border-bottom-right-radius: var(--bs-border-radius) !important;
+    }
+
+    .rounded-end {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-top-left-radius: var(--bs-border-radius) !important;
+        border-bottom-left-radius: var(--bs-border-radius) !important;
+    }
+
+    // Dropdown menus
+    .dropdown-menu {
+        text-align: right;
+        left: auto;
+        right: 0;
+    }
+
+    // Navigation
+    .navbar-nav {
+        .nav-link {
+            padding-right: 0;
+            padding-left: 1rem;
+        }
+    }
+
+    // Breadcrumb
+    .breadcrumb-item {
+        +.breadcrumb-item {
+            padding-right: 0.5rem;
+            padding-left: 0;
+
+            &::before {
+                float: right;
+                padding-left: 0.5rem;
+                padding-right: 0;
+                content: '\\';
+            }
+        }
+    }
+
+    // List groups
+    .list-group {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    // Checkboxes and radios
+    .form-check {
+        padding-right: 1.5em;
+        padding-left: 0;
+
+        .form-check-input {
+            float: right;
+            margin-right: -1.5em;
+            margin-left: 0;
+        }
+    }
+
+    // Input groups
+    .input-group {
+        > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+            margin-right: -1px;
+            margin-left: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: var(--bs-border-radius);
+            border-bottom-left-radius: var(--bs-border-radius);
+        }
+    }
+
+    // Carousel controls
+    .carousel-control-prev {
+        left: auto;
+        right: 0;
+    }
+
+    .carousel-control-next {
+        right: auto;
+        left: 0;
+    }
+
+    // Tooltips
+    .tooltip {
+        &.bs-tooltip-start {
+            .tooltip-arrow {
+                right: auto;
+                left: 0;
+            }
+        }
+
+        &.bs-tooltip-end {
+            .tooltip-arrow {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    // Modals
+    .modal-header {
+        .btn-close {
+            margin: -0.5rem auto -0.5rem -0.5rem;
+        }
+    }
+
+    // Cards
+    .card-img-left {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: calc(var(--bs-border-radius) - 1px);
+        border-bottom-right-radius: calc(var(--bs-border-radius) - 1px);
+    }
+
+    // Pagination
+    .pagination {
+        .page-item {
+            &:first-child .page-link {
+                border-top-right-radius: var(--bs-border-radius);
+                border-bottom-right-radius: var(--bs-border-radius);
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            &:last-child .page-link {
+                border-top-left-radius: var(--bs-border-radius);
+                border-bottom-left-radius: var(--bs-border-radius);
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+
+    // Icons that need flipping
+    .icon-flip-rtl {
+        transform: scaleX(-1);
+    }
+
+    // Custom component adjustments
+    .sxa-component {
+        direction: rtl;
+    }
+
+    // Text expansion handling for RTL languages
+    .text-expansion-rtl {
+        min-width: 120%; // Arabic text can be 20% longer
+    }
+}
+
+// Logical properties for better RTL support
+.margin-inline-start {
+    margin-inline-start: 1rem;
+}
+
+.margin-inline-end {
+    margin-inline-end: 1rem;
+}
+
+.padding-inline-start {
+    padding-inline-start: 1rem;
+}
+
+.padding-inline-end {
+    padding-inline-end: 1rem;
+}
+
+// Border inline
+.border-inline-start {
+    border-inline-start: 1px solid var(--border-color);
+}
+
+.border-inline-end {
+    border-inline-end: 1px solid var(--border-color);
+}

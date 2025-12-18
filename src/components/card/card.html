@@ -1,0 +1,42 @@
+<!-- ============================================
+     CARD COMPONENT - SXA Content
+     ============================================
+     
+     SXA Integration Notes:
+     - Rendering: Content/Card
+     - Variants: Vertical, Horizontal, Image-top, Icon-based
+     - Data Source: Content items with Image, Icon, Title, Description, Link
+     - Rendering Parameters: Card Style, Image Position, Show Shadow
+-->
+
+<div class="sxa-component sxa-card" data-component-name="Card" data-variant="vertical">
+    <div class="card-wrapper">
+        <div class="card-image">
+            <div class="card-image-placeholder"
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px;"></div>
+            <span class="card-badge">Featured</span>
+        </div>
+
+        <div class="card-content">
+            <div class="card-header">
+                <h3 class="card-title">Component Title</h3>
+                <span class="card-meta">December 18, 2024</span>
+            </div>
+
+            <p class="card-description">
+                This is a flexible card component that can display various types of content
+                with different layouts and styles. Perfect for showcasing products, articles, or services.
+            </p>
+
+            <div class="card-footer">
+                <a href="#" class="card-link" data-i18n="readMore">
+                    Read More
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

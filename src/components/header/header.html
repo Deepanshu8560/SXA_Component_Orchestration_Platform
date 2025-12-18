@@ -1,0 +1,113 @@
+<!-- ============================================
+     HEADER COMPONENT - SXA Navigation
+     ============================================
+     
+     SXA Integration Notes:
+     - Rendering: Navigation/Header
+     - Variants: Standard, Sticky, Transparent
+     - Data Source: Site Settings/Navigation
+     - Rendering Parameters: Logo, Menu Items, Show Search, Show Language Switcher
+     - Placeholder: header-content
+-->
+
+<header class="sxa-component sxa-header" data-component-name="Header" data-variant="standard">
+  <div class="header-top">
+    <div class="container-sxa">
+      <div class="header-top-content">
+        <div class="header-utilities">
+          <!-- Language Switcher -->
+          <div class="language-switcher">
+            <button class="language-switcher-btn" data-language="en">
+              <span class="flag">🇺🇸</span>
+              <span class="lang-text" data-i18n="english">English</span>
+            </button>
+            <button class="language-switcher-btn" data-language="ar">
+              <span class="flag">🇸🇦</span>
+              <span class="lang-text">العربية</span>
+            </button>
+            <button class="language-switcher-btn" data-language="fr">
+              <span class="flag">🇫🇷</span>
+              <span class="lang-text">Français</span>
+            </button>
+          </div>
+          
+          <!-- Theme Switcher -->
+          <div class="theme-switcher">
+            <button class="theme-switcher-btn" data-theme="default" title="Default Theme">
+              <span>☀️</span>
+            </button>
+            <button class="theme-switcher-btn" data-theme="dark" title="Dark Theme">
+              <span>🌙</span>
+            </button>
+            <button class="theme-switcher-btn" data-theme="vibrant" title="Vibrant Theme">
+              <span>🎨</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="header-main">
+    <div class="container-sxa">
+      <div class="header-content">
+        <!-- Logo -->
+        <div class="header-logo">
+          <a href="/" class="logo-link">
+            <span class="logo-text">Sitecore SXA</span>
+          </a>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="header-nav">
+          <ul class="nav-menu">
+            <li class="nav-item active">
+              <a href="#" class="nav-link" data-i18n="home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" data-i18n="about">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <span data-i18n="services">Services</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Web Development</a></li>
+                <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                <li><a class="dropdown-item" href="#">Consulting</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" data-i18n="contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="search-toggle" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+            </svg>
+          </button>
+          
+          <button class="mobile-menu-toggle" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Search Overlay -->
+  <div class="header-search-overlay">
+    <div class="container-sxa">
+      <div class="search-form">
+        <input type="search" class="search-input" placeholder="Search..." data-i18n="search">
+        <button class="search-close" aria-label="Close search">×</button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,123 @@
+// ============================================
+// CTA COMPONENT STYLES
+// ============================================
+
+@import '../../styles/variables';
+
+.sxa-cta {
+    .cta-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 50px;
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+        border-radius: $border-radius-xl;
+        color: white;
+
+        @media (max-width: $breakpoint-md) {
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 30px;
+            gap: 30px;
+        }
+    }
+
+    .cta-content {
+        flex-grow: 1;
+
+        .cta-title {
+            margin: 0 0 15px 0;
+            font-size: 2rem;
+            font-weight: $font-weight-bold;
+            color: white;
+
+            @media (max-width: $breakpoint-md) {
+                font-size: 1.75rem;
+            }
+        }
+
+        .cta-description {
+            margin: 0;
+            font-size: 1.125rem;
+            opacity: 0.95;
+            line-height: $line-height-lg;
+        }
+    }
+
+    .cta-actions {
+        display: flex;
+        gap: 15px;
+        flex-shrink: 0;
+
+        @media (max-width: $breakpoint-sm) {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        font-size: 16px;
+        font-weight: $font-weight-semibold;
+        border-radius: $border-radius;
+        text-decoration: none;
+        transition: $transition-base;
+        white-space: nowrap;
+
+        &.cta-primary {
+            background: white;
+            color: var(--color-primary);
+
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: $box-shadow-lg;
+            }
+        }
+
+        &.cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-3px);
+            }
+        }
+
+        svg {
+            transition: $transition-fast;
+        }
+
+        &:hover svg {
+            transform: translateX(5px);
+        }
+    }
+
+    // Banner Variant
+    &[data-variant="banner"] {
+        .cta-container {
+            background: var(--bg-surface);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+
+            .cta-title {
+                color: var(--text-primary);
+            }
+
+            .cta-button.cta-primary {
+                background: var(--color-primary);
+                color: white;
+            }
+
+            .cta-button.cta-secondary {
+                color: var(--text-primary);
+                border-color: var(--border-color);
+            }
+        }
+    }
+}

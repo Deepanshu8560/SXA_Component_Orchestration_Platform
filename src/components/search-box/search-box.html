@@ -1,0 +1,39 @@
+<!-- ============================================
+     SEARCH BOX COMPONENT - SXA Interactive
+     ============================================
+     
+     SXA Integration Notes:
+     - Rendering: Interactive/Search Box
+     - Variants: Inline, Overlay, Dropdown results
+     - Data Source: Search configuration
+     - Rendering Parameters: Placeholder Text, Results Page, Auto-suggest
+-->
+
+<div class="sxa-component sxa-search-box" data-component-name="Search Box" data-variant="inline">
+    <form class="search-form" role="search" action="/search" method="get">
+        <div class="search-input-wrapper">
+            <input type="search" class="search-input" name="q" placeholder="Search..." aria-label="Search"
+                autocomplete="off">
+            <button type="submit" class="search-submit" aria-label="Submit search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="search-suggestions" hidden>
+            <ul class="suggestions-list">
+                <li class="suggestion-item">
+                    <a href="#">Sitecore SXA Components</a>
+                </li>
+                <li class="suggestion-item">
+                    <a href="#">Sitecore Experience Accelerator</a>
+                </li>
+                <li class="suggestion-item">
+                    <a href="#">SXA Theming Guide</a>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

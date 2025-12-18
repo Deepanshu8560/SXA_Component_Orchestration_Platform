@@ -1,0 +1,349 @@
+// ============================================
+// HEADER COMPONENT STYLES
+// ============================================
+
+@import '../../styles/variables';
+
+.sxa-header {
+    position: relative;
+    z-index: $zindex-sticky;
+
+    // Header Top
+    .header-top {
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border-color);
+        padding: 8px 0;
+
+        .header-top-content {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .header-utilities {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    // Language Switcher
+    .language-switcher {
+        display: flex;
+        gap: 8px;
+
+        .language-switcher-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: $border-radius-sm;
+            color: var(--text-secondary);
+            font-size: 13px;
+            cursor: pointer;
+            transition: $transition-fast;
+
+            &:hover {
+                background: var(--bg-elevated);
+                border-color: var(--color-primary);
+                color: var(--color-primary);
+            }
+
+            &.active {
+                background: var(--color-primary);
+                border-color: var(--color-primary);
+                color: white;
+            }
+
+            .flag {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // Theme Switcher
+    .theme-switcher {
+        display: flex;
+        gap: 6px;
+
+        .theme-switcher-btn {
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: $border-radius-sm;
+            font-size: 18px;
+            cursor: pointer;
+            transition: $transition-fast;
+
+            &:hover {
+                background: var(--bg-elevated);
+                border-color: var(--color-primary);
+                transform: scale(1.1);
+            }
+
+            &.active {
+                background: var(--color-primary);
+                border-color: var(--color-primary);
+
+                span {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+
+    // Header Main
+    .header-main {
+        background: var(--header-bg);
+        color: var(--header-text);
+        padding: 15px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    // Logo
+    .header-logo {
+        flex-shrink: 0;
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--header-text);
+            font-size: 24px;
+            font-weight: $font-weight-bold;
+            transition: $transition-fast;
+
+            &:hover {
+                color: var(--color-primary);
+                text-decoration: none;
+            }
+        }
+    }
+
+    // Navigation
+    .header-nav {
+        flex-grow: 1;
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            @media (max-width: $breakpoint-lg) {
+                display: none;
+            }
+        }
+
+        .nav-item {
+            position: relative;
+
+            &.active .nav-link {
+                color: var(--color-primary);
+                font-weight: $font-weight-semibold;
+            }
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px 18px;
+            color: var(--header-text);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: $font-weight-normal;
+            border-radius: $border-radius-sm;
+            transition: $transition-fast;
+
+            &:hover {
+                background: var(--bg-surface);
+                color: var(--color-primary);
+                text-decoration: none;
+            }
+        }
+
+        .dropdown-menu {
+            min-width: 200px;
+            padding: 8px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            border-radius: $border-radius;
+            box-shadow: $box-shadow-lg;
+
+            .dropdown-item {
+                padding: 10px 15px;
+                color: var(--text-primary);
+                border-radius: $border-radius-sm;
+                transition: $transition-fast;
+
+                &:hover {
+                    background: var(--color-primary);
+                    color: white;
+                }
+            }
+        }
+    }
+
+    // Header Actions
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        button {
+            background: transparent;
+            border: none;
+            color: var(--header-text);
+            cursor: pointer;
+            transition: $transition-fast;
+
+            &:hover {
+                color: var(--color-primary);
+                transform: scale(1.1);
+            }
+        }
+
+        .search-toggle {
+            padding: 8px;
+
+            @media (max-width: $breakpoint-md) {
+                display: none;
+            }
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            padding: 8px;
+
+            @media (max-width: $breakpoint-lg) {
+                display: flex;
+            }
+
+            .hamburger-line {
+                width: 24px;
+                height: 2px;
+                background: currentColor;
+                border-radius: 2px;
+                transition: $transition-fast;
+            }
+        }
+    }
+
+    // Search Overlay
+    .header-search-overlay {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-elevated);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: $box-shadow-lg;
+        padding: 30px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: $transition-base;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .search-form {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background: var(--bg-body);
+            border: 2px solid var(--border-color);
+            border-radius: $border-radius-lg;
+            font-size: 18px;
+            color: var(--text-primary);
+            transition: $transition-fast;
+
+            &:focus {
+                outline: none;
+                border-color: var(--color-primary);
+            }
+        }
+
+        .search-close {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 30px;
+            line-height: 1;
+            cursor: pointer;
+            transition: $transition-fast;
+
+            &:hover {
+                color: var(--color-danger);
+            }
+        }
+    }
+
+    // Sticky Variant
+    &[data-variant="sticky"] {
+        position: sticky;
+        top: 0;
+
+        .header-main {
+            box-shadow: $box-shadow;
+        }
+    }
+
+    // Transparent Variant
+    &[data-variant="transparent"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        .header-top {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .header-main {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    }
+}
+
+// RTL Adjustments
+[dir="rtl"] {
+    .sxa-header {
+        .header-content {
+            flex-direction: row-reverse;
+        }
+
+        .nav-menu {
+            flex-direction: row-reverse;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+// ============================================
+// BREADCRUMB COMPONENT STYLES
+// ============================================
+
+@import '../../styles/variables';
+
+.sxa-breadcrumb {
+    padding: 15px 0;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+
+    .breadcrumb-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 14px;
+    }
+
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+        color: var(--text-secondary);
+
+        a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: $transition-fast;
+
+            &:hover {
+                color: var(--color-primary);
+                text-decoration: underline;
+            }
+        }
+
+        &.active {
+            color: var(--text-primary);
+            font-weight: $font-weight-semibold;
+        }
+
+        // Separator
+        &:not(:last-child)::after {
+            content: '/';
+            margin-left: 8px;
+            color: var(--text-muted);
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    // Compact Variant
+    &[data-variant="compact"] {
+        padding: 10px 0;
+
+        .breadcrumb-list {
+            font-size: 13px;
+            gap: 6px;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            margin-left: 6px;
+        }
+    }
+
+    // Icon-based Variant
+    &[data-variant="icon"] {
+        .breadcrumb-item {
+            &:not(:last-child)::after {
+                content: '›';
+                font-size: 18px;
+                font-weight: $font-weight-bold;
+            }
+
+            &:first-child::before {
+                content: '🏠';
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: $breakpoint-sm) {
+    .sxa-breadcrumb {
+        .breadcrumb-list {
+            font-size: 12px;
+        }
+
+        // Hide middle items on mobile, show only first and last
+        .breadcrumb-item:not(:first-child):not(:last-child) {
+            display: none;
+        }
+
+        .breadcrumb-item:nth-last-child(2)::after {
+            content: '...';
+        }
+    }
+}

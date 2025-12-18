@@ -1,0 +1,86 @@
+<!-- ============================================
+     ACCORDION COMPONENT - SXA Structure
+     ============================================
+     
+     SXA Integration Notes:
+     - Rendering: Structure/Accordion
+     - Variants: Single-open, Multi-open, Icon positions
+     - Data Source: Accordion items with Title and Content
+     - Rendering Parameters: Allow Multiple Open, Icon Style
+-->
+
+<div class="sxa-component sxa-accordion" data-component-name="Accordion" data-variant="single-open">
+    <div class="accordion-container">
+        <div class="accordion-item">
+            <h3 class="accordion-header">
+                <button class="accordion-button" aria-expanded="true" aria-controls="accordion-panel-1"
+                    id="accordion-btn-1">
+                    <span class="accordion-title">What is Sitecore SXA?</span>
+                    <span class="accordion-icon">−</span>
+                </button>
+            </h3>
+            <div class="accordion-panel active" role="region" aria-labelledby="accordion-btn-1" id="accordion-panel-1">
+                <div class="accordion-content">
+                    <p>Sitecore Experience Accelerator (SXA) is a framework that enables parallel work streams and
+                        faster time to market. It provides reusable, templated UX layouts and components that are fully
+                        integrated into the Sitecore editing experience.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h3 class="accordion-header">
+                <button class="accordion-button" aria-expanded="false" aria-controls="accordion-panel-2"
+                    id="accordion-btn-2">
+                    <span class="accordion-title">What are the benefits of using SXA?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+            </h3>
+            <div class="accordion-panel" role="region" aria-labelledby="accordion-btn-2" id="accordion-panel-2" hidden>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Faster time to market with pre-built components</li>
+                        <li>Consistent user experience across sites</li>
+                        <li>Reduced development costs</li>
+                        <li>Built-in responsive design</li>
+                        <li>Easy content management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h3 class="accordion-header">
+                <button class="accordion-button" aria-expanded="false" aria-controls="accordion-panel-3"
+                    id="accordion-btn-3">
+                    <span class="accordion-title">How does theming work in SXA?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+            </h3>
+            <div class="accordion-panel" role="region" aria-labelledby="accordion-btn-3" id="accordion-panel-3" hidden>
+                <div class="accordion-content">
+                    <p>SXA uses a theme-based approach where you can create multiple themes for different sites or
+                        brands. Themes include CSS, JavaScript, and assets that define the look and feel of your site.
+                        You can easily switch between themes or create custom themes based on your requirements.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h3 class="accordion-header">
+                <button class="accordion-button" aria-expanded="false" aria-controls="accordion-panel-4"
+                    id="accordion-btn-4">
+                    <span class="accordion-title">Can I customize SXA components?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+            </h3>
+            <div class="accordion-panel" role="region" aria-labelledby="accordion-btn-4" id="accordion-panel-4" hidden>
+                <div class="accordion-content">
+                    <p>Yes! SXA components are highly customizable. You can create rendering variants to modify the
+                        markup, add custom CSS classes, extend component functionality with JavaScript, and even create
+                        completely custom components that integrate with the SXA framework.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,205 @@
+// ============================================
+// MAIN STYLESHEET
+// ============================================
+
+// Import variables and themes
+@import 'variables';
+@import 'themes';
+@import 'rtl';
+@import 'experience-editor';
+
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// ============================================
+// GLOBAL STYLES
+// ============================================
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-headings;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-sm;
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: $h1-font-size;
+}
+
+h2 {
+    font-size: $h2-font-size;
+}
+
+h3 {
+    font-size: $h3-font-size;
+}
+
+h4 {
+    font-size: $h4-font-size;
+}
+
+h5 {
+    font-size: $h5-font-size;
+}
+
+h6 {
+    font-size: $h6-font-size;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: $transition-fast;
+
+    &:hover {
+        color: var(--link-hover-color);
+        text-decoration: underline;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Utility classes
+.container-sxa {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-spacing {
+    padding: 60px 0;
+
+    @media (max-width: $breakpoint-md) {
+        padding: 40px 0;
+    }
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+// Animation utilities
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+// Loading state
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        margin: -15px 0 0 -15px;
+        border: 3px solid var(--color-primary);
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 0.8s linear infinite;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// Focus styles for accessibility
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+// Print styles
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}

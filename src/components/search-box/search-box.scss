@@ -1,0 +1,94 @@
+// ============================================
+// SEARCH BOX COMPONENT STYLES
+// ============================================
+
+@import '../../styles/variables';
+
+.sxa-search-box {
+    position: relative;
+
+    .search-form {
+        position: relative;
+    }
+
+    .search-input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-input {
+        flex-grow: 1;
+        padding: 12px 50px 12px 16px;
+        background: var(--bg-body);
+        border: 1px solid var(--border-color);
+        border-radius: $border-radius;
+        font-size: 15px;
+        color: var(--text-primary);
+        transition: $transition-fast;
+
+        &:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+        }
+    }
+
+    .search-submit {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 8px;
+        background: transparent;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: $transition-fast;
+        border-radius: $border-radius-sm;
+
+        &:hover {
+            color: var(--color-primary);
+            background: var(--bg-surface);
+        }
+    }
+
+    .search-suggestions {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        background: var(--bg-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: $border-radius;
+        box-shadow: $box-shadow-lg;
+        z-index: $zindex-dropdown;
+
+        &[hidden] {
+            display: none;
+        }
+    }
+
+    .suggestions-list {
+        margin: 0;
+        padding: 8px 0;
+        list-style: none;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .suggestion-item {
+        a {
+            display: block;
+            padding: 10px 16px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: $transition-fast;
+
+            &:hover {
+                background: var(--bg-surface);
+                color: var(--color-primary);
+            }
+        }
+    }
+}

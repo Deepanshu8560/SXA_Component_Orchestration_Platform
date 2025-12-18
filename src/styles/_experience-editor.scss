@@ -1,0 +1,375 @@
+// ============================================
+// EXPERIENCE EDITOR STYLES
+// ============================================
+
+// Only show Experience Editor UI when enabled
+[data-experience-editor='on'] {
+
+    // Placeholder chrome
+    .sxa-placeholder {
+        position: relative;
+        min-height: 50px;
+        margin: 10px 0;
+        padding: 10px;
+        border: $ee-placeholder-border;
+        border-radius: $border-radius;
+        background: rgba(0, 120, 212, 0.02);
+
+        &::before {
+            content: attr(data-placeholder-name);
+            position: absolute;
+            top: -12px;
+            left: 10px;
+            padding: 2px 8px;
+            background: #0078d4;
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 1;
+        }
+
+        &:hover {
+            background: $ee-hover-bg;
+            border-color: var(--color-primary);
+        }
+
+        // Add component button
+        .ee-add-component {
+            position: absolute;
+            top: -12px;
+            right: 10px;
+            padding: 2px 10px;
+            background: var(--color-success);
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: $transition-fast;
+            z-index: 2;
+
+            &:hover {
+                background: darken(#28a745, 10%);
+                transform: scale(1.05);
+            }
+
+            &::before {
+                content: '+ ';
+            }
+        }
+    }
+
+    // Component chrome
+    .sxa-component {
+        position: relative;
+        outline: $ee-component-border;
+        outline-offset: 2px;
+
+        &:hover {
+            outline-color: var(--color-primary);
+            outline-width: 2px;
+            background: $ee-hover-bg;
+
+            .ee-component-toolbar {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        // Component toolbar
+        .ee-component-toolbar {
+            position: absolute;
+            top: -30px;
+            right: 0;
+            display: flex;
+            gap: 4px;
+            padding: 4px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: $border-radius-sm;
+            box-shadow: $box-shadow-sm;
+            opacity: 0;
+            visibility: hidden;
+            transition: $transition-fast;
+            z-index: $zindex-experience-editor;
+
+            .ee-toolbar-btn {
+                padding: 4px 8px;
+                background: transparent;
+                border: none;
+                border-radius: 3px;
+                font-size: 12px;
+                cursor: pointer;
+                transition: $transition-fast;
+
+                &:hover {
+                    background: var(--bg-surface);
+                }
+
+                &.ee-edit {
+                    color: var(--color-primary);
+                }
+
+                &.ee-move {
+                    color: var(--color-secondary);
+                    cursor: move;
+                }
+
+                &.ee-delete {
+                    color: var(--color-danger);
+                }
+            }
+        }
+
+        // Component label
+        &::after {
+            content: attr(data-component-name);
+            position: absolute;
+            top: -30px;
+            left: 0;
+            padding: 4px 8px;
+            background: var(--color-primary);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 3px;
+            opacity: 0;
+            visibility: hidden;
+            transition: $transition-fast;
+            white-space: nowrap;
+            z-index: $zindex-experience-editor;
+        }
+
+        &:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    // Experience Editor toolbar (top of page)
+    .ee-main-toolbar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $ee-toolbar-height;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+        color: white;
+        box-shadow: $box-shadow;
+        z-index: $zindex-experience-editor + 10;
+
+        .ee-toolbar-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .ee-toolbar-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .ee-toolbar-button {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: $border-radius-sm;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: $transition-fast;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.3);
+                border-color: rgba(255, 255, 255, 0.5);
+            }
+
+            &.ee-primary {
+                background: var(--color-success);
+                border-color: var(--color-success);
+
+                &:hover {
+                    background: darken(#28a745, 10%);
+                }
+            }
+        }
+
+        .ee-device-preview {
+            display: flex;
+            gap: 5px;
+
+            button {
+                padding: 6px 10px;
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: $border-radius-sm;
+                cursor: pointer;
+                transition: $transition-fast;
+
+                &.active {
+                    background: rgba(255, 255, 255, 0.3);
+                    border-color: rgba(255, 255, 255, 0.5);
+                }
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
+    // Component selection panel
+    .ee-component-panel {
+        position: fixed;
+        top: $ee-toolbar-height;
+        right: -350px;
+        width: 350px;
+        height: calc(100vh - #{$ee-toolbar-height});
+        background: white;
+        border-left: 1px solid var(--border-color);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: $zindex-experience-editor;
+        overflow-y: auto;
+
+        &.open {
+            right: 0;
+        }
+
+        .ee-panel-header {
+            padding: 20px;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+
+            h3 {
+                margin: 0;
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text-primary);
+            }
+
+            .ee-panel-search {
+                margin-top: 15px;
+                width: 100%;
+                padding: 8px 12px;
+                border: 1px solid var(--border-color);
+                border-radius: $border-radius-sm;
+                font-size: 14px;
+
+                &:focus {
+                    outline: none;
+                    border-color: var(--color-primary);
+                }
+            }
+        }
+
+        .ee-panel-content {
+            padding: 20px;
+
+            .ee-component-category {
+                margin-bottom: 25px;
+
+                h4 {
+                    margin: 0 0 10px 0;
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: var(--text-secondary);
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                .ee-component-list {
+                    display: grid;
+                    gap: 8px;
+
+                    .ee-component-item {
+                        padding: 12px;
+                        background: var(--bg-surface);
+                        border: 1px solid var(--border-color);
+                        border-radius: $border-radius-sm;
+                        cursor: move;
+                        transition: $transition-fast;
+
+                        &:hover {
+                            background: var(--color-primary);
+                            color: white;
+                            border-color: var(--color-primary);
+                            transform: translateX(-5px);
+                        }
+
+                        .ee-component-name {
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-bottom: 4px;
+                        }
+
+                        .ee-component-desc {
+                            font-size: 12px;
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Toggle button for component panel
+    .ee-panel-toggle {
+        position: fixed;
+        top: calc(#{$ee-toolbar-height} + 20px);
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: var(--color-primary);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: $box-shadow-lg;
+        transition: $transition-fast;
+        z-index: $zindex-experience-editor + 1;
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 120, 212, 0.4);
+        }
+    }
+}
+
+// Hide Experience Editor UI when disabled
+[data-experience-editor='off'] {
+
+    .sxa-placeholder::before,
+    .ee-add-component,
+    .ee-component-toolbar,
+    .sxa-component::after,
+    .ee-main-toolbar,
+    .ee-component-panel,
+    .ee-panel-toggle {
+        display: none !important;
+    }
+
+    .sxa-placeholder {
+        border: none;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        min-height: auto;
+    }
+
+    .sxa-component {
+        outline: none;
+    }
+}

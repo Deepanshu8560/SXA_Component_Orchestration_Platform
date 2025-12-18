@@ -1,0 +1,204 @@
+// ============================================
+// TABS COMPONENT STYLES
+// ============================================
+
+@import '../../styles/variables';
+
+.sxa-tabs {
+    .tabs-container {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+    }
+
+    .tabs-nav {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background: var(--bg-surface);
+        border-bottom: 2px solid var(--border-color);
+
+        @media (max-width: $breakpoint-sm) {
+            flex-direction: column;
+        }
+    }
+
+    .tabs-nav-item {
+        flex: 1;
+    }
+
+    .tabs-nav-link {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        color: var(--text-secondary);
+        font-size: 15px;
+        font-weight: $font-weight-semibold;
+        text-align: center;
+        cursor: pointer;
+        transition: $transition-fast;
+
+        &:hover {
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+        }
+
+        &.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+            background: var(--bg-body);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: -2px;
+        }
+    }
+
+    .tabs-content {
+        padding: 30px;
+
+        @media (max-width: $breakpoint-sm) {
+            padding: 20px;
+        }
+    }
+
+    .tabs-panel {
+        animation: fadeIn 0.3s ease-out;
+
+        &[hidden] {
+            display: none;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            line-height: $line-height-lg;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+
+            li {
+                margin-bottom: 10px;
+                color: var(--text-secondary);
+            }
+        }
+
+        .specs-table {
+            width: 100%;
+
+            tr {
+                border-bottom: 1px solid var(--border-color);
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+
+            td {
+                padding: 12px 0;
+                color: var(--text-secondary);
+
+                &:first-child {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    // Vertical Variant
+    &[data-variant="vertical"] {
+        .tabs-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+
+            @media (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tabs-nav {
+            flex-direction: column;
+            border-bottom: none;
+            border-right: 2px solid var(--border-color);
+
+            @media (max-width: $breakpoint-md) {
+                border-right: none;
+                border-bottom: 2px solid var(--border-color);
+            }
+        }
+
+        .tabs-nav-link {
+            text-align: left;
+            border-bottom: none;
+            border-right: 3px solid transparent;
+
+            &.active {
+                border-right-color: var(--color-primary);
+                border-bottom-color: transparent;
+            }
+
+            @media (max-width: $breakpoint-md) {
+                text-align: center;
+                border-right: none;
+                border-bottom: 3px solid transparent;
+
+                &.active {
+                    border-right-color: transparent;
+                    border-bottom-color: var(--color-primary);
+                }
+            }
+        }
+    }
+
+    // Pills Variant
+    &[data-variant="pills"] {
+        .tabs-container {
+            background: transparent;
+            border: none;
+        }
+
+        .tabs-nav {
+            background: transparent;
+            border: none;
+            gap: 10px;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tabs-nav-item {
+            flex: 0 0 auto;
+        }
+
+        .tabs-nav-link {
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 10px 20px;
+
+            &.active {
+                background: var(--color-primary);
+                color: white;
+                border-color: var(--color-primary);
+            }
+        }
+
+        .tabs-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: $border-radius-lg;
+        }
+    }
+}

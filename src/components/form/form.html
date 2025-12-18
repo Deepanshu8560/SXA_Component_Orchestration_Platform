@@ -1,0 +1,91 @@
+<!-- ============================================
+     FORM COMPONENT - SXA Forms
+     ============================================
+     
+     SXA Integration Notes:
+     - Rendering: Forms/Form
+     - Variants: Contact, Newsletter, Multi-step
+     - Data Source: Form definition items
+     - Rendering Parameters: Form Action, Success Message, Validation Style
+     - Integration with Sitecore Forms module
+-->
+
+<div class="sxa-component sxa-form" data-component-name="Form" data-variant="contact">
+    <div class="form-container">
+        <div class="form-header">
+            <h2 class="form-title" data-i18n="contact">Contact Us</h2>
+            <p class="form-description">Fill out the form below and we'll get back to you as soon as possible.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName" class="form-label">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" class="form-control" required
+                        aria-required="true">
+                    <span class="form-error" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName" class="form-label">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control" required aria-required="true">
+                    <span class="form-error" role="alert"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-control" required aria-required="true">
+                <span class="form-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="subject" class="form-label">Subject *</label>
+                <select id="subject" name="subject" class="form-control" required>
+                    <option value="">Select a subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="sales">Sales</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+                <span class="form-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="form-label">Message *</label>
+                <textarea id="message" name="message" class="form-control" rows="5" required
+                    aria-required="true"></textarea>
+                <span class="form-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
+                    <label for="consent" class="form-check-label">
+                        I agree to the privacy policy and terms of service *
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-lg" data-i18n="submit">
+                    Submit Form
+                </button>
+                <button type="reset" class="btn btn-secondary btn-lg">
+                    Reset
+                </button>
+            </div>
+        </form>
+
+        <div class="form-success" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully. We'll get back to you soon.</p>
+        </div>
+    </div>
+</div>

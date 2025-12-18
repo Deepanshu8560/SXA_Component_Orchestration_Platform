@@ -1,0 +1,202 @@
+// ============================================
+// THEME SYSTEM - CSS CUSTOM PROPERTIES
+// ============================================
+
+// Default SXA Theme
+:root,
+[data-theme='default'] {
+    // Primary colors
+    --color-primary: #0078d4;
+    --color-primary-light: #50a0e0;
+    --color-primary-dark: #005a9e;
+
+    // Secondary colors
+    --color-secondary: #6c757d;
+    --color-secondary-light: #adb5bd;
+    --color-secondary-dark: #495057;
+
+    // Accent colors
+    --color-accent: #ff6b35;
+    --color-accent-light: #ff8c5f;
+    --color-accent-dark: #e04e1f;
+
+    // Semantic colors
+    --color-success: #28a745;
+    --color-info: #17a2b8;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+
+    // Neutral colors
+    --color-white: #ffffff;
+    --color-light: #f8f9fa;
+    --color-gray-100: #f1f3f5;
+    --color-gray-200: #e9ecef;
+    --color-gray-300: #dee2e6;
+    --color-gray-400: #ced4da;
+    --color-gray-500: #adb5bd;
+    --color-gray-600: #6c757d;
+    --color-gray-700: #495057;
+    --color-gray-800: #343a40;
+    --color-gray-900: #212529;
+    --color-black: #000000;
+
+    // Background colors
+    --bg-body: #ffffff;
+    --bg-surface: #f8f9fa;
+    --bg-elevated: #ffffff;
+
+    // Text colors
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
+    --text-inverse: #ffffff;
+
+    // Border colors
+    --border-color: #dee2e6;
+    --border-color-light: #e9ecef;
+    --border-color-dark: #ced4da;
+
+    // Link colors
+    --link-color: #0078d4;
+    --link-hover-color: #005a9e;
+
+    // Component-specific
+    --header-bg: #ffffff;
+    --header-text: #212529;
+    --footer-bg: #343a40;
+    --footer-text: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #dee2e6;
+}
+
+// Dark Corporate Theme
+[data-theme='dark'] {
+    // Primary colors
+    --color-primary: #4a9eff;
+    --color-primary-light: #7ab8ff;
+    --color-primary-dark: #2a7edf;
+
+    // Secondary colors
+    --color-secondary: #8b95a1;
+    --color-secondary-light: #b4bcc7;
+    --color-secondary-dark: #6a7481;
+
+    // Accent colors
+    --color-accent: #ff8c42;
+    --color-accent-light: #ffaa6b;
+    --color-accent-dark: #e66d23;
+
+    // Semantic colors
+    --color-success: #3dd598;
+    --color-info: #4fc3f7;
+    --color-warning: #ffd54f;
+    --color-danger: #ff5252;
+
+    // Neutral colors
+    --color-white: #1a1d23;
+    --color-light: #252932;
+    --color-gray-100: #2d3139;
+    --color-gray-200: #363a45;
+    --color-gray-300: #454a57;
+    --color-gray-400: #5a6070;
+    --color-gray-500: #7a8394;
+    --color-gray-600: #9ba3b4;
+    --color-gray-700: #b8bfcd;
+    --color-gray-800: #d4d9e3;
+    --color-gray-900: #e8ebf0;
+    --color-black: #ffffff;
+
+    // Background colors
+    --bg-body: #1a1d23;
+    --bg-surface: #252932;
+    --bg-elevated: #2d3139;
+
+    // Text colors
+    --text-primary: #e8ebf0;
+    --text-secondary: #9ba3b4;
+    --text-muted: #7a8394;
+    --text-inverse: #1a1d23;
+
+    // Border colors
+    --border-color: #363a45;
+    --border-color-light: #2d3139;
+    --border-color-dark: #454a57;
+
+    // Link colors
+    --link-color: #4a9eff;
+    --link-hover-color: #7ab8ff;
+
+    // Component-specific
+    --header-bg: #1a1d23;
+    --header-text: #e8ebf0;
+    --footer-bg: #0f1115;
+    --footer-text: #e8ebf0;
+    --card-bg: #252932;
+    --card-border: #363a45;
+}
+
+// Modern Vibrant Theme
+[data-theme='vibrant'] {
+    // Primary colors
+    --color-primary: #7c3aed;
+    --color-primary-light: #a78bfa;
+    --color-primary-dark: #5b21b6;
+
+    // Secondary colors
+    --color-secondary: #ec4899;
+    --color-secondary-light: #f472b6;
+    --color-secondary-dark: #be185d;
+
+    // Accent colors
+    --color-accent: #f59e0b;
+    --color-accent-light: #fbbf24;
+    --color-accent-dark: #d97706;
+
+    // Semantic colors
+    --color-success: #10b981;
+    --color-info: #06b6d4;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+
+    // Neutral colors
+    --color-white: #ffffff;
+    --color-light: #faf5ff;
+    --color-gray-100: #f5f3ff;
+    --color-gray-200: #ede9fe;
+    --color-gray-300: #ddd6fe;
+    --color-gray-400: #c4b5fd;
+    --color-gray-500: #a78bfa;
+    --color-gray-600: #8b5cf6;
+    --color-gray-700: #7c3aed;
+    --color-gray-800: #6d28d9;
+    --color-gray-900: #5b21b6;
+    --color-black: #1e1b4b;
+
+    // Background colors
+    --bg-body: #ffffff;
+    --bg-surface: #faf5ff;
+    --bg-elevated: #ffffff;
+
+    // Text colors
+    --text-primary: #1e1b4b;
+    --text-secondary: #6d28d9;
+    --text-muted: #8b5cf6;
+    --text-inverse: #ffffff;
+
+    // Border colors
+    --border-color: #ddd6fe;
+    --border-color-light: #ede9fe;
+    --border-color-dark: #c4b5fd;
+
+    // Link colors
+    --link-color: #7c3aed;
+    --link-hover-color: #5b21b6;
+
+    // Component-specific
+    --header-bg: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    --header-text: #ffffff;
+    --footer-bg: #1e1b4b;
+    --footer-text: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #ddd6fe;
+}
