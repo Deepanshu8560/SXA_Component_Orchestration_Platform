@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "npx storybook build",
     "sass": "sass src/styles:dist/css --watch",
     "sass:build": "sass src/styles:dist/css --style compressed",
     "dev": "concurrently \"npm run sass\" \"npm run storybook\"",
-    "build": "npm run build-storybook",
-    "vercel-build": "storybook build"
+    "build": "npx storybook build",
+    "vercel-build": "npx storybook build"
   },
   "keywords": [
     "sitecore",
